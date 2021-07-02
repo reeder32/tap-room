@@ -10,18 +10,21 @@ function DeleteButton(props) {
       brand: product.brand,
       price: product.price,
       alcoholContent: product.alcoholContent,
-      remaining: product.remaining - 16,
+      remaining: product.remaining - 1,
       id: product.id,
     });
   }
-  const isOutOfStock = product.remaining <= 5;
+  let buttonText = null;
+  const isOutOfStock = product.remaining <= 0;
+
+  isOutOfStock ? (buttonText = "Sold out!") : (buttonText = "Sell pint");
   return (
     <Button
       onClick={handleDeletePint}
       variant="outline-danger"
       disabled={isOutOfStock}
     >
-      sell pint
+      {buttonText}
     </Button>
   );
 }

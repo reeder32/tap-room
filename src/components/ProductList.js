@@ -10,7 +10,7 @@ function ProductList(props) {
       brand: productToEdit.brand,
       price: productToEdit.price,
       alcoholContent: productToEdit.alcoholContent,
-      remaining: productToEdit.remaining - 8,
+      remaining: productToEdit.remaining - 1,
       id: productToEdit.id,
       key: productToEdit.id,
     });
@@ -32,7 +32,7 @@ function ProductList(props) {
           <DeleteButton
             product={product}
             onDeletePint={() => handleDeletePint(product)}
-          ></DeleteButton>
+          ></DeleteButton>{" "}
         </>
       ))}
       {/* {props.productList.map((product) => (
