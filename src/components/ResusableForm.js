@@ -1,16 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "react-bootstrap/Button";
 
 function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <input type="text" name="name" placeholder="name" />
-        <input type="text" name="brand" placeholder="brand" />
-        <input type="text" name="price" placeholder="price" />
-        <input type="text" name="alcoholContent" placeholder="alcoholContent" />
-        <input type="number" name="remaining" placeholder="remaining pints" />
-        <button type="submit">{props.buttonText}</button>
+        <input type="text" name="name" placeholder="name" required />
+        <input type="text" name="brand" placeholder="brand" required />
+        <input type="text" name="price" placeholder="price" required />
+        <input
+          type="text"
+          name="alcoholContent"
+          placeholder="alcohol content"
+          required
+        />
+        <input
+          type="number"
+          name="remaining"
+          placeholder="remaining pints"
+          required
+        />
+        <Button variant="primary" type="submit">
+          {props.buttonText}
+        </Button>
       </form>
     </React.Fragment>
   );

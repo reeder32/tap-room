@@ -22,12 +22,12 @@ function ProductCell(props) {
 }
 
 ProductCell.propTypes = {
-  name: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.string,
-  alcoholContent: PropTypes.string,
-  remaining: PropTypes.number,
-  id: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  alcoholContent: PropTypes.string.isRequired,
+  remaining: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   whenCellClicked: PropTypes.func,
 };
 

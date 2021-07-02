@@ -2,6 +2,7 @@ import React from "react";
 import ProductForm from "./ProductForm";
 import ProductList from "./ProductList";
 import ProductDetail from "./ProductDetail";
+import Button from "react-bootstrap/Button";
 
 class ProductControl extends React.Component {
   constructor(props) {
@@ -73,8 +74,17 @@ class ProductControl extends React.Component {
 
     return (
       <React.Fragment>
-        <button onClick={this.handlePageChange}>{buttonText}</button>
-        {visibleState}
+        <div>
+          <Button
+            onClick={this.handlePageChange}
+            variant="dark"
+            size="lg"
+            block
+          >
+            {buttonText}
+          </Button>
+        </div>
+        <div className="mainBody">{visibleState}</div>
       </React.Fragment>
     );
   }
