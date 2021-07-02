@@ -1,3 +1,18 @@
+# Tap Room
+
+## a react app for keeping inventory for a tap room
+
+#### By Nick Reeder
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+## Technologies Used
+
+- React.js
+- HTML
+- CSS
+- Bootstrap
+
 ## Component Diagram
 
 ![Component Diagram](tap-room.png)
@@ -72,3 +87,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License
+
+[MIT License](https://opensource.org/licenses/MIT)
+&copy; 2021 Nick Reeder
+
+## Contact Information
+
+[email me](mailto:nickreeder32@gmail.com)
+
+### Other projects
+
+#### iOS work
+
+- [Moody Weather](https://apps.apple.com/us/app/moody-weather/id1506337317)
+
+- [Find My Mailbox](https://apps.apple.com/us/app/find-my-mailbox/id1530700085)

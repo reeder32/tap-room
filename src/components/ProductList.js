@@ -2,6 +2,8 @@ import React from "react";
 import ProductCell from "./ProductCell";
 import PropTypes from "prop-types";
 import DeleteButton from "./DeleteButton";
+import ListGroup from "react-bootstrap/ListGroup";
+
 function ProductList(props) {
   function handleDeletePint(productToEdit) {
     props.onDeletePint({
@@ -17,27 +19,26 @@ function ProductList(props) {
   }
   return (
     <React.Fragment>
-      {props.productList.map((product) => (
-        <>
-          <ProductCell
-            whenCellClicked={props.onCellSelection}
-            name={product.name}
-            brand={product.brand}
-            price={product.price}
-            alcoholContent={product.alcoholContent}
-            remaining={product.remaining}
-            id={product.id}
-            key={product.id}
-          />
-          <DeleteButton
-            product={product}
-            onDeletePint={() => handleDeletePint(product)}
-          ></DeleteButton>{" "}
-        </>
-      ))}
-      {/* {props.productList.map((product) => (
-          
-        ))} */}
+      <ListGroup>
+        {props.productList.map((product) => (
+          <ListGroup.Item>
+            <ProductCell
+              whenCellClicked={props.onCellSelection}
+              name={product.name}
+              brand={product.brand}
+              price={product.price}
+              alcoholContent={product.alcoholContent}
+              remaining={product.remaining}
+              id={product.id}
+              key={product.id}
+            />
+            <DeleteButton
+              product={product}
+              onDeletePint={() => handleDeletePint(product)}
+            ></DeleteButton>{" "}
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
     </React.Fragment>
   );
 }
