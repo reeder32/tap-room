@@ -38,6 +38,17 @@ class ProductControl extends React.Component {
       formVisibleOnPage: false,
     });
   };
+
+  handleDeletePint = (editedProduct) => {
+    const editedMasterProductList = this.state.masterProductList
+      .filter((product) => product.id !== editedProduct.id)
+      .concat(editedProduct);
+    this.setState({
+      masterProductList: editedMasterProductList,
+      selectedProduct: null,
+    });
+  };
+
   render() {
     let visibleState = null;
     let buttonText = null;
@@ -49,6 +60,7 @@ class ProductControl extends React.Component {
         <ProductList
           productList={this.state.masterProductList}
           onCellSelection={this.handleProductSelect}
+          onDeletePint={this.handleDeletePint}
         />
       );
       buttonText = "Add new";

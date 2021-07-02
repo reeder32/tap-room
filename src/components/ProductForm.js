@@ -11,7 +11,7 @@ function ProductForm(props) {
       brand: event.target.brand.value,
       price: event.target.price.value,
       alcoholContent: event.target.alcoholContent.value,
-      remaining: event.target.remaining.value,
+      remaining: Number(event.target.remaining.value),
       id: v4(),
     });
   }
