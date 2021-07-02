@@ -17,15 +17,16 @@ function ProductForm(props) {
   }
   return (
     <React.Fragment>
-      <ReusableForm formSubmissionHandler={ }
+      <ReusableForm
+        formSubmissionHandler={handleNewProductFormSubmission}
         buttonText="Add"
-        />
+      />
     </React.Fragment>
-  )
+  );
 }
 
 ProductForm.propTypes = {
-  onNewProductCreation: PropTypes.func
-}
+  onNewProductCreation: PropTypes.func,
+};
 
-export default PrductForm
+export default ProductForm;
