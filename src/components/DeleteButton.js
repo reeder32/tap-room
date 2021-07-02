@@ -16,8 +16,8 @@ function DeleteButton(props) {
   }
 
   return (
-    <Button onClick={handleDeletePint} variant="danger">
-      -
+    <Button onClick={handleDeletePint} variant="outline-danger">
+      sell pint
     </Button>
   );
 }
