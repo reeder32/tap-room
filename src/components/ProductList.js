@@ -17,8 +17,8 @@ function ProductList(props) {
   }
   return (
     <React.Fragment>
-      <div className="cellInfo">
-        {props.productList.map((product) => (
+      {props.productList.map((product) => (
+        <>
           <ProductCell
             whenCellClicked={props.onCellSelection}
             name={product.name}
@@ -29,14 +29,15 @@ function ProductList(props) {
             id={product.id}
             key={product.id}
           />
-        ))}
-        {props.productList.map((product) => (
           <DeleteButton
             product={product}
             onDeletePint={() => handleDeletePint(product)}
           ></DeleteButton>
-        ))}
-      </div>
+        </>
+      ))}
+      {/* {props.productList.map((product) => (
+          
+        ))} */}
     </React.Fragment>
   );
 }
