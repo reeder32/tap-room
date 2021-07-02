@@ -8,12 +8,15 @@ class ProductControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
+      masterProductList: [],
+      selectedProduct: null,
     };
   }
   handlePageChange = () => {
-    if (this.formVisibleOnPage) {
+    if (this.state.selectedProduct) {
       this.setState({
         formVisibleOnPage: false,
+        selectedProduct: null,
       });
     } else {
       this.setState((prevState) => ({
@@ -21,14 +24,38 @@ class ProductControl extends React.Component {
       }));
     }
   };
+  handleProductSelect = (id) => {
+    const selectedProduct = this.state.masterProductList.filter(
+      (product) => product.id === id
+    )[0];
+    this.setState({ selectedProduct: selectedProduct });
+  };
+  handleAddingNewProductToList = (newProduct) => {
+    const newMasterProductList =
+      this.state.masterProductList.concat(newProduct);
+    this.setState({
+      masterProductList: newMasterProductList,
+      formVisibleOnPage: false,
+    });
+  };
   render() {
     let visibleState = null;
     let buttonText = null;
-    if (!this.state.formVisibleOnPage) {
-      visibleState = <ProductList />;
+    if (this.state.selectedProduct) {
+      visibleState = <ProductDetail product={this.state.selectedProduct} />;
+      buttonText = "Back to products";
+    } else if (!this.state.formVisibleOnPage) {
+      visibleState = (
+        <ProductList
+          productList={this.state.masterProductList}
+          onCellSelection={this.handleProductSelect}
+        />
+      );
       buttonText = "Add new";
     } else {
-      visibleState = <ProductForm />;
+      visibleState = (
+        <ProductForm onNewProductCreation={this.handleAddingNewProductToList} />
+      );
       buttonText = "Back to products";
     }
 

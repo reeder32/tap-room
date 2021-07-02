@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function ProductCell(props) {
   return (
     <React.Fragment>
-      <div>
+      <div onClick={() => props.whenCellClicked(props.id)}>
         <div className="product-details">
           <h4>
             <em>{props.name}</em>

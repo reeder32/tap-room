@@ -1,36 +1,28 @@
 import React from "react";
 import ProductCell from "./ProductCell";
+import PropTypes from "prop-types";
 
-const productList = [
-  {
-    name: "Pale Ale",
-    brand: "Pyramid",
-    price: "$4.99",
-    alcoholContent: "2.5",
-    remaining: 124,
-  },
-  {
-    name: "Hefeweizen",
-    brand: "Sierra Nevada",
-    price: "$5.99",
-    alcoholContent: "3.0",
-    remaining: 124,
-  },
-];
-function ProductList() {
+function ProductList(props) {
   return (
     <React.Fragment>
-      {productList.map((product, index) => (
+      {props.productList.map((product) => (
         <ProductCell
+          whenCellClicked={props.onCellSelection}
           name={product.name}
           brand={product.brand}
           price={product.price}
           alcoholContent={product.alcoholContent}
-          key={index}
+          id={product.id}
+          key={product.id}
         />
       ))}
     </React.Fragment>
   );
 }
+
+ProductList.propTypes = {
+  productList: PropTypes.array,
+  onCellSelection: PropTypes.func,
+};
 
 export default ProductList;
