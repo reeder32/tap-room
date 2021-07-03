@@ -1,6 +1,6 @@
 # Tap Room
 
-## a react app for keeping inventory for a tap room
+## A react app for keeping inventory for a tap room
 
 #### By Nick Reeder
 
