@@ -20,8 +20,8 @@ function ProductList(props) {
   return (
     <React.Fragment>
       <ListGroup>
-        {props.productList.map((product) => (
-          <ListGroup.Item>
+        {props.productList.map((product, index) => (
+          <ListGroup.Item key={`${product.id}`}>
             <ProductCell
               whenCellClicked={props.onCellSelection}
               name={product.name}
@@ -30,7 +30,6 @@ function ProductList(props) {
               alcoholContent={product.alcoholContent}
               remaining={product.remaining}
               id={product.id}
-              key={product.id}
             />
             <DeleteButton
               product={product}

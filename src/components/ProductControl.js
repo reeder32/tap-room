@@ -41,9 +41,13 @@ class ProductControl extends React.Component {
   };
 
   handleDeletePint = (editedProduct) => {
-    const editedMasterProductList = this.state.masterProductList
-      .filter((product) => product.id !== editedProduct.id)
-      .concat(editedProduct);
+    const index = this.state.masterProductList.findIndex(
+      (product) => product.id === editedProduct.id
+    );
+    const editedMasterProductList = this.state.masterProductList.filter(
+      (product) => product.id !== editedProduct.id
+    );
+    editedMasterProductList.splice(index, 0, editedProduct);
     this.setState({
       masterProductList: editedMasterProductList,
       selectedProduct: null,
